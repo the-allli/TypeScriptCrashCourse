@@ -13,6 +13,18 @@ function greet(name: string) {
 }
 greet("Alice");
 
+// Function that accepts a num and function
+function operateOnNumber(
+  num: number,
+  operation: (n: number) => number
+): number {
+  // Apply the provided operation function to the number and return the result.
+  return operation(num);
+}
+const double = (x: number): number => x * 2;
+const res = operateOnNumber(5, double);
+console.log(`Doubling 5: ${res}`); // Expected output: 10
+
 // Anonymous Function returned from function
 function createAdder(x: number): (y: number) => number {
   // Anonymous Function

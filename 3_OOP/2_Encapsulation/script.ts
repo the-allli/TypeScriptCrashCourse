@@ -1,5 +1,5 @@
 // Visibility Modifiers (public, private, protected)
-class Person {
+class Person1 {
   public name: string; // Accessible from anywhere
   private _secret: string; // Only accessible inside Person class
   protected id: string; // Accessible inside Person and its subclasses
@@ -12,7 +12,7 @@ class Person {
     return this._secret; // OK: Accessible inside the class
   }
 }
-class Employee extends Person {
+class Employee extends Person1 {
   department: string;
   constructor(name: string, _secret: string, id: string, department: string) {
     super(name, _secret, id);
@@ -23,7 +23,7 @@ class Employee extends Person {
     // console.log(this.secret); // Error: Private member not accessible in subclass
   }
 }
-let alice = new Person("Alice", "topSecret", "P123");
+let alice = new Person1("Alice", "topSecret", "P123");
 console.log(alice.name); // Output: Alice (public)
 console.log(alice.getSecret); // Output: topSecret (public method accessing private)
 // console.log(alice._secret); // Error: Property 'secret' is private and only accessible within class 'Person'.
