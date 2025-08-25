@@ -18,3 +18,7 @@ enum Direction {
   Left = "LEFT",
   Right = "RIGHT",
 }
+
+let color: Color = Color.Red;
+let dstatus: HttpStatus = HttpStatus.OK;
+let direction: Direction = Direction.Up;
